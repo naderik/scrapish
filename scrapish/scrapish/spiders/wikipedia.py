@@ -8,6 +8,8 @@ class WikipediaSpider(CrawlSpider):
     allowed_domains = ['en.wikipedia.org']
     start_urls = ['http://en.wikipedia.org/wiki/Kevin_Bacon']
 
+    rules = [Rule(LinkExtractor(allow=r'wiki/((?!:).)*$'), callback='parse_info', follow=True)]
+
     def parse(self, response):
         return {
             'title': response.xpath('//h1/text()').get() or response.xpath('//h1/i/text()').get(),
