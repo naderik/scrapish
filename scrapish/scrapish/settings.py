@@ -9,6 +9,11 @@
 
 BOT_NAME = 'scrapish'
 
+CLOSESPIDER_PAGECOUNT = 10
+
+FEED_URI = 'articles.json'
+FEED_FORMAT = 'json'
+
 SPIDER_MODULES = ['scrapish.spiders']
 NEWSPIDER_MODULE = 'scrapish.spiders'
 
